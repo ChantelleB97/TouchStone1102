@@ -9,7 +9,7 @@ body {
 /* Header and Navigation Styles */
 header {
   position: relative;
-  height: 300px; /* Increased height */
+  height: 300px; /* Increased height for a larger header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,6 +65,66 @@ header {
   text-decoration: underline;
 }
 
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  filter: brightness(60%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cta-button {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #e64a19;
+}
+
+/* Featured Section Styles */
+.featured {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.featured div {
+  text-align: center;
+  padding: 10px;
+}
+
+.featured a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.featured a:hover {
+  color: #0056b3;
+}
+
 /* Footer Styles */
 footer {
   background-color: #f8f9fa;
@@ -72,3 +132,18 @@ footer {
   padding: 20px;
   font-size: 0.9em;
 }
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.social-icons a:hover img {
+  opacity: 0.7;
+}
+
