@@ -65,6 +65,18 @@ header {
   text-decoration: underline;
 }
 
+/* Site Title Styles */
+.site-title {
+  position: absolute;
+  top: 20px; /* Adjust top position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white; /* Change color based on your header image */
+  font-size: 2em; /* Adjust font size as needed */
+  text-align: center;
+  z-index: 1; /* Ensure it appears above the header image */
+}
+
 /* Hero Section Styles */
 .hero {
   position: relative;
