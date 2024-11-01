@@ -9,11 +9,11 @@ body {
 /* Header and Navigation Styles */
 header {
   position: relative;
-  height: 300px; /* Increased height for a larger header */
+  height: 300px; /* Height for the header */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Center items vertically */
   padding-top: 10px;
   background-color: #f8f9fa;
 }
@@ -46,9 +46,9 @@ header {
 /* Site Title Styles */
 .site-title {
   position: absolute;
-  top: 20px; /* Adjust top position as needed */
+  top: 50%; /* Move title to the vertical center of the header */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
   color: black; /* Change text color to black */
   font-size: 2em; /* Adjust font size as needed */
   text-align: center;
@@ -82,66 +82,6 @@ header {
   text-decoration: underline;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.hero-overlay {
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  filter: brightness(60%);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.cta-button {
-  background-color: #ff5722;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  display: inline-block;
-}
-
-.cta-button:hover {
-  background-color: #e64a19;
-}
-
-/* Featured Section Styles */
-.featured {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.featured div {
-  text-align: center;
-  padding: 10px;
-}
-
-.featured a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.featured a:hover {
-  color: #0056b3;
-}
-
 /* Footer Styles */
 footer {
   background-color: #f8f9fa;
@@ -163,4 +103,5 @@ footer {
 .social-icons a:hover img {
   opacity: 0.7;
 }
+
 
