@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ABC Fitness Studios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="/Users/rj/Documents/GitHub/TouchStone2024/Images/Logo.jpeg" alt="ABC Fitness Studios Logo" width="100" height="100">
+        </div>
+        
+        <!-- Full-width Header Image -->
+        <div class="header-image">
+            <img src="header-image.jpg" alt="Header Image">
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="hero-overlay">
+                <img src="hero-image.jpg" alt="Hero Image">
+                <div class="hero-text">
+                    <h2>Welcome to ABC Fitness Studios!</h2>
+                    <p>Explore our community and discover amazing content.</p>
+                    <a href="community.html" class="cta-button">Join Us</a>
+                </div>
+            </div>
+        </section>
+        <section class="featured">
+            <div class="about-preview">
+                <h3>About Us</h3>
+                <p>Learn more about our mission and vision.</p>
+                <a href="about.html">Read More</a>
+            </div>
+            <div class="gallery-preview">
+                <h3>Gallery</h3>
+                <p>Check out our latest images.</p>
+                <a href="gallery.html">View Gallery</a>
+            </div>
+            <div class="community-highlights">
+                <h3>Community</h3>
+                <p>See what our members are saying.</p>
+                <a href="community.html">Join Us</a>
+            </div>
+        </section>
     </main>
-  </body>
+    
+    <footer>
+        <p>Contact us at: email@example.com</p>
+        <p>Follow us on social media!</p>
+        <div class="social-icons">
+            <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2024 ABC Fitness Studios</p>
+    </footer>
+</body>
 </html>
+
