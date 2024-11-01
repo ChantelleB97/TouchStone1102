@@ -12,6 +12,10 @@ header {
   text-align: center;
 }
 
+.header-content {
+  position: relative;
+}
+
 .logo {
   position: absolute;
   top: 10px;
@@ -26,12 +30,14 @@ header {
 
 .header-image img {
   width: 100%;
-  height: 150px; /* Adjust to a medium size */
-  object-fit: cover; /* Ensure the image covers the space without distortion */
+  height: 150px;
+  object-fit: cover;
 }
 
 .bottom-nav {
   background-color: #333;
+  text-align: center;
+  padding: 5px 0;
 }
 
 .menu {
@@ -41,7 +47,7 @@ header {
 }
 
 .menu li {
-  display: inline; /* Horizontal menu */
+  display: inline;
 }
 
 .menu li a {
@@ -52,7 +58,27 @@ header {
 }
 
 .nav-button:hover {
-  background-color: #555; /* Darker on hover */
+  background-color: #555;
+}
+
+/* Home Page Styles */
+.home-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.learn-more-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.learn-more-button:hover {
+  background-color: #218838;
 }
 
 /* About Us Styles */
@@ -62,69 +88,54 @@ header {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column for the top row */
-  grid-template-rows: auto auto; /* Two rows */
-  gap: 20px; /* Space between items */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
 }
 
 .grid-item {
-  background-color: white; /* Background for items */
-  border-radius: 8px; /* Rounded corners */
+  background-color: white;
+  border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  grid-column: 1; /* Only one column for title */
+  grid-column: 1 / -1;
   text-align: center;
 }
 
-.grid-item:nth-child(2), /* Top left */
-.grid-item:nth-child(3) { /* Top right */
-  display: none; /* Hide these items */
-}
-
-.grid-item:nth-child(4) {
-  grid-column: 1; /* First column in the bottom row */
-}
-
 .contact-form {
-  grid-column: 1; /* Place contact form in the second column of the bottom row */
-  text-align: left; /* Align text to the left */
   padding: 20px;
 }
 
-.contact-form h3 {
-  text-align: center; /* Center the form title */
-}
-
 .contact-form label {
-  display: block; /* Block display for labels */
-  margin-bottom: 5px; /* Space below labels */
+  display: block;
+  margin-bottom: 5px;
 }
 
-.contact-form input, 
+.contact-form input,
 .contact-form textarea {
-  width: 100%; /* Full width inputs */
-  padding: 10px; /* Padding for input fields */
-  margin-bottom: 10px; /* Space below input fields */
-  border: 1px solid #ccc; /* Border for input fields */
-  border-radius: 5px; /* Rounded corners */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.contact-form .submit-button {
-  background-color: #28a745; /* Button color */
-  color: white; /* Text color */
-  padding: 10px 15px; /* Button padding */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  display: block; /* Center button */
-  margin: 0 auto; /* Center button */
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
-.contact-form .submit-button:hover {
-  background-color: #218838; /* Darker green on hover */
+.submit-button:hover {
+  background-color: #218838;
 }
 
 /* Footer Styles */
@@ -140,16 +151,12 @@ footer {
 }
 
 .social-icons a {
-  margin: 0 5px; /* Space between icons */
+  margin: 0 5px;
 }
 
 .social-icon {
-  width: 30px; /* Smaller size for social media icons */
-  height: auto; /* Maintain aspect ratio */
-}
-
-footer p {
-  margin: 5px 0; /* Space between footer text */
+  width: 20px;
+  height: auto;
 }
 
 
