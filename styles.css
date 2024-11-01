@@ -110,15 +110,18 @@ header {
   gap: 20px;
 }
 
-.menu a {
+/* Navigation Button Styles */
+.nav-button {
+  background-color: #28a745; /* Button color */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Button padding */
   text-decoration: none;
-  color: #007bff;
-  padding: 5px 10px;
-  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.menu a:hover {
-  text-decoration: underline;
+.nav-button:hover {
+  background-color: #218838; /* Darker green on hover */
 }
 
 /* Footer Styles */
@@ -134,13 +137,14 @@ footer {
 }
 
 .social-icons img {
-  width: 30px;
-  height: 30px;
+  width: 30px; /* Adjust the width of social media icons */
+  height: 30px; /* Adjust the height of social media icons */
   margin: 0 10px;
 }
 
 .social-icons a:hover img {
-  opacity: 0.7;
+  opacity: 0.7; /* Change opacity on hover */
 }
+
 
 
