@@ -49,4 +49,22 @@ function renderCartItems() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateCartTotal();
+
+    // Form submission handler for Contact Us
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Save data logic here (e.g., send to a server)
+        console.log('Form data:', { name, email, message });
+
+        // Show alert
+        alert('Thank you for your message.');
+
+        // Optionally, reset the form
+        form.reset();
+    });
 });
