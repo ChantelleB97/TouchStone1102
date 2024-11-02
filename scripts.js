@@ -49,6 +49,12 @@ function renderCartItems() {
     });
 }
 
+function processOrder() {
+    // Implement order processing logic here
+    alert('Order processed successfully!');
+    clearCart();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     updateCartTotal();
 
