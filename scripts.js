@@ -57,6 +57,7 @@ function showOrderForm() {
     document.getElementById('order-form-view').style.display = 'block';
     document.getElementById('cart-view').classList.add('order-form-active');
     document.getElementById('clear-cart-btn').style.display = 'none';
+    document.querySelector('h2').innerText = 'Your Cart';
 }
 
 function hideOrderForm() {
@@ -80,6 +81,8 @@ function processOrder(event) {
 
     clearCart();
     document.getElementById('order-form').reset();
+    document.getElementById('cart-view').classList.remove('order-form-active');
+    document.querySelector('h2').innerText = 'Your Cart';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
