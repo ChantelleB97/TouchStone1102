@@ -1,7 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item) {
-    if (typeof item.price !== 'number' || typeof item.qty !== 'number') {
+    if (!item || typeof item.price !== 'number' || typeof item.qty !== 'number') {
         console.error('Invalid item properties');
         return;
     }
@@ -26,10 +26,14 @@ function clearCart() {
 }
 
 function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartTotal();
-    renderCartItems();
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartTotal();
+        renderCartItems();
+    } else {
+        console.error('Invalid index for cart item removal');
+    }
 }
 
 function toggleCartView() {
@@ -82,7 +86,7 @@ function processOrder(event) {
     clearCart();
     document.getElementById('order-form').reset();
     hideOrderForm();
-    document.getElementById('cart-view').style.display = 'block'; // Keep the title 'Your Cart' visible
+    document.getElementById('cart-view').style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
