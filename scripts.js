@@ -1,8 +1,12 @@
-let cartTotal = 0;
+let cartTotal = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
 function addToCart(price) {
     cartTotal += price;
+    localStorage.setItem('cartTotal', cartTotal.toFixed(2));
     document.querySelector('.cart-total').innerText = `$${cartTotal.toFixed(2)}`;
 }
 
-// Optional: You can add functions to clear the cart or perform other actions if needed
+// On page load, set the cart total
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.cart-total').innerText = `$${cartTotal.toFixed(2)}`;
+});
