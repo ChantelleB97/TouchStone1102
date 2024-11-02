@@ -1,7 +1,6 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item) {
-    // Ensure item has valid price and qty
     if (typeof item.price !== 'number' || typeof item.qty !== 'number') {
         console.error('Invalid item properties');
         return;
@@ -49,30 +48,36 @@ function renderCartItems() {
     });
 }
 
-function processOrder() {
-    // Implement order processing logic here
-    alert('Order processed successfully!');
+function processOrder(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('customer-name').value;
+    const address = document.getElementById('customer-address').value;
+    const phone = document.getElementById('customer-phone').value;
+
+    const orderId = Math.floor(Math.random() * 1000000);
+
+    alert(`Order number ${orderId}. Thank you for your order, ${name}!`);
+
+    console.log('Order Details:', { orderId, name, address, phone, cart });
+
     clearCart();
+    document.getElementById('order-form').reset();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     updateCartTotal();
 
-    // Form submission handler for Contact Us
     const form = document.querySelector('form');
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        // Save data logic here (e.g., send to a server)
         console.log('Form data:', { name, email, message });
 
-        // Show alert
         alert('Thank you for your message.');
-
-        // Optionally, reset the form
         form.reset();
     });
 });
