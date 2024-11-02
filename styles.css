@@ -2,11 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 .header-image {
@@ -62,6 +57,8 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-item {
