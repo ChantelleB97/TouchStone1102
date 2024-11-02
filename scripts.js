@@ -17,12 +17,14 @@ function updateCartTotal() {
     document.querySelector('.cart-total').innerText = `$${total.toFixed(2)}`;
 }
 
-function clearCart() {
+function clearCart(showAlert = true) {
     cart = [];
     localStorage.removeItem('cart');
     updateCartTotal();
     renderCartItems();
-    alert('Cart Cleared!');
+    if (showAlert) {
+        alert('Cart Cleared!');
+    }
 }
 
 function removeFromCart(index) {
@@ -83,7 +85,8 @@ function processOrder(event) {
 
     console.log('Order Details:', { orderId, name, address, phone, cart });
 
-    clearCart();
+    // Clear the cart without showing the alert
+    clearCart(false);
     document.getElementById('order-form').reset();
     hideOrderForm();
     document.getElementById('cart-view').style.display = 'block';
