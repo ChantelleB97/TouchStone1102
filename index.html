@@ -45,6 +45,18 @@
             margin: 0 auto;
             width: 50%; /* Adjust as needed */
         }
+        #cart-view {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +73,8 @@
                 <li><a href="store.html" class="nav-button">Products/Classes</a></li>
                 <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
             </ul>
-            <div class="cart-icon" aria-live="polite">
+            <div class="cart-icon" aria-live="polite" onclick="toggleCartView()">
+                <img src="Images/cart-icon.png" alt="Cart Icon">
                 <span class="cart-total">$0.00</span>
             </div>
         </nav>
@@ -73,6 +86,13 @@
             <button class="learn-more" onclick="window.location.href='AboutUs.html'">Learn More</button>
         </div>
     </main>
+
+    <div id="cart-view">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="toggleCartView()">Close</button>
+    </div>
 
     <footer>
         <p>Contact us at: admin@abcfitnessstudios.com</p>
