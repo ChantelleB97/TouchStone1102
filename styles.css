@@ -120,3 +120,19 @@ main {
 .order-form-active h2 {
   display: block;
 }
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add some spacing between the form elements */
+}
+
+.order-form label {
+  margin-bottom: 5px;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form button {
+  padding: 5px;
+}
