@@ -50,6 +50,7 @@ nav {
 
 .cart-icon {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .grid-container {
@@ -87,6 +88,15 @@ footer {
   display: none; /* Ensure the cart is hidden initially */
   max-height: calc(100vh - 40px); /* Ensure the cart does not extend past the body */
   overflow-y: auto; /* Add scroll if content overflows */
+  position: absolute;
+  right: 20px;
+  top: 60px; /* Positioned under the cart icon */
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
 }
 
 main {
