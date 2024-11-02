@@ -75,3 +75,12 @@ footer {
   padding: 20px;
   background-color: #f0f0f0;
 }
+
+.header-image .logo {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+}
+
+#cart-view {
+  display: none; /* Ensure the cart is hidden initially */
+}
