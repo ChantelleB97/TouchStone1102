@@ -1,103 +1,122 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function addToCart(item) {
-    if (typeof item.price !== 'number' || typeof item.qty !== 'number') {
-        console.error('Invalid item properties');
-        return;
-    }
-
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartTotal();
-    alert('Item added to the cart.');
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-function updateCartTotal() {
-    let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-    document.querySelector('.cart-total').innerText = `$${total.toFixed(2)}`;
+.header-image {
+  position: relative;
+  text-align: center;
 }
 
-function clearCart() {
-    cart = [];
-    localStorage.removeItem('cart');
-    updateCartTotal();
-    renderCartItems();
-    alert('Cart Cleared!');
+.header-image img {
+  width: 100%;
+  height: auto;
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartTotal();
-    renderCartItems();
+.site-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  color: black;
 }
 
-function toggleCartView() {
-    const cartView = document.getElementById('cart-view');
-    cartView.style.display = cartView.style.display === 'none' ? 'block' : 'none';
-    renderCartItems();
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-function renderCartItems() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-    cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:50px;height:50px;"> ${item.name} - $${item.price} x ${item.qty} <button onclick="removeFromCart(${index})">Remove</button>`;
-        cartItemsContainer.appendChild(li);
-    });
+.menu {
+  list-style-type: none;
+  padding: 0;
 }
 
-function showOrderForm() {
-    if (cart.length === 0) {
-        alert('Cart is empty.');
-        return;
-    }
-
-    document.getElementById('order-form-view').style.display = 'block';
-    document.getElementById('cart-view').classList.add('order-form-active');
-    document.getElementById('clear-cart-btn').style.display = 'none';
-    document.querySelector('h2').innerText = 'Your Cart';
+.menu li {
+  display: inline;
+  margin-right: 15px;
 }
 
-function hideOrderForm() {
-    document.getElementById('order-form-view').style.display = 'none';
-    document.getElementById('cart-view').classList.remove('order-form-active');
-    document.getElementById('clear-cart-btn').style.display = 'inline-block';
+.nav-button {
+  text-decoration: none;
+  color: black;
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
 }
 
-function processOrder(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('customer-name').value;
-    const address = document.getElementById('customer-address').value;
-    const phone = document.getElementById('customer-phone').value;
-
-    const orderId = Math.floor(Math.random() * 1000000);
-
-    alert(`Order number ${orderId}. Thank you for your order, ${name}!`);
-
-    console.log('Order Details:', { orderId, name, address, phone, cart });
-
-    clearCart();
-    document.getElementById('order-form').reset();
-    hideOrderForm();
-    document.getElementById('cart-view').style.display = 'block'; // Keep the title 'Your Cart' visible
+.cart-icon {
+  font-weight: bold;
+  cursor: pointer;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartTotal();
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
 
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
 
-        console.log('Form data:', { name, email, message });
+.product-image {
+  width: 100%;
+  height: auto;
+}
 
-        alert('Thank you for your message.');
-        form.reset();
-    });
-});
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.header-image .logo {
+  width: 100px;
+  height: auto;
+}
+
+#cart-view {
+  display: none;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+#cart-view ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-form-active #cart-items,
+.order-form-active button:not(#order-form button),
+.order-form-active #clear-cart-btn {
+  display: none;
+}
+
+.order-form-active h2 {
+  display: block;
+}
