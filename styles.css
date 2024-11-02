@@ -110,3 +110,8 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
+/* Hide cart items when order form is active */
+.order-form-active #cart-items {
+  display: none;
+}

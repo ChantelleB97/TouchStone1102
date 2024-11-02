@@ -50,13 +50,17 @@ function renderCartItems() {
 
 function showOrderForm() {
     document.getElementById('order-form-view').style.display = 'block';
-    document.getElementById('cart-view').style.display = 'none';
+    document.getElementById('cart-view').classList.add('order-form-active');
     document.getElementById('clear-cart-btn').style.display = 'none';
+
+    if (cart.length === 0) {
+        alert('Cart is empty.');
+    }
 }
 
 function hideOrderForm() {
     document.getElementById('order-form-view').style.display = 'none';
-    document.getElementById('cart-view').style.display = 'block';
+    document.getElementById('cart-view').classList.remove('order-form-active');
     document.getElementById('clear-cart-btn').style.display = 'inline-block';
 }
 
