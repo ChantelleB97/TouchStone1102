@@ -48,6 +48,18 @@ function renderCartItems() {
     });
 }
 
+function showOrderForm() {
+    document.getElementById('order-form-view').style.display = 'block';
+    document.getElementById('cart-view').style.display = 'none';
+    document.getElementById('clear-cart-btn').style.display = 'none';
+}
+
+function hideOrderForm() {
+    document.getElementById('order-form-view').style.display = 'none';
+    document.getElementById('cart-view').style.display = 'block';
+    document.getElementById('clear-cart-btn').style.display = 'inline-block';
+}
+
 function processOrder(event) {
     event.preventDefault();
 
