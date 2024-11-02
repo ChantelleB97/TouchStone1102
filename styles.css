@@ -1,162 +1,64 @@
-/* General Styles */
+/* General Layout */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #f4f4f4;
 }
 
-header {
-  position: relative;
-  text-align: center;
-}
-
-.header-content {
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.site-title {
-  margin-top: 60px; /* Space for logo */
-  font-size: 2em;
-  color: black;
-}
-
-.header-image img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.bottom-nav {
+header, footer {
   background-color: #333;
+  color: white;
   text-align: center;
-  padding: 5px 0;
+  padding: 15px;
+}
+
+/* Header and Navigation */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 .menu li {
-  display: inline;
+  margin: 0 10px;
 }
 
-.menu li a {
-  text-decoration: none;
-  color: white;
-  padding: 15px 20px;
-  display: inline-block;
-}
-
-.nav-button:hover {
-  background-color: #555;
-}
-
-/* Home Page Styles */
-.home-content {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.learn-more-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+.nav-button, .learn-more {
   background-color: #28a745;
   color: white;
-  text-decoration: none;
+  padding: 10px 20px;
   border-radius: 5px;
+  text-decoration: none;
 }
 
-.learn-more-button:hover {
-  background-color: #218838;
-}
-
-/* About Us Styles */
-.about-us {
-  padding: 20px;
-}
-
-.grid-container {
+/* Grid Layout for About Us Page */
+.grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 20px;
 }
 
 .grid-item {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-
-.contact-form {
   padding: 20px;
 }
 
-.contact-form label {
-  display: block;
-  margin-bottom: 5px;
+.product-grid .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.submit-button {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-}
-
-.submit-button:hover {
-  background-color: #218838;
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-}
-
-.social-icons {
-  margin: 10px 0;
-}
-
-.social-icons a {
-  margin: 0 5px;
-}
-
+/* Footer */
 .social-icon {
   width: 20px;
-  height: auto;
+  margin: 5px;
 }
 
 
