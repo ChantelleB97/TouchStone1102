@@ -81,8 +81,8 @@ function processOrder(event) {
 
     clearCart();
     document.getElementById('order-form').reset();
-    document.getElementById('cart-view').classList.remove('order-form-active');
-    document.querySelector('h2').innerText = 'Your Cart';
+    hideOrderForm();
+    document.getElementById('cart-view').style.display = 'block'; // Keep the title 'Your Cart' visible
 }
 
 document.addEventListener('DOMContentLoaded', function() {

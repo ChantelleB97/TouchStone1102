@@ -113,7 +113,6 @@ main {
 
 /* Hide cart items and other elements when order form is active */
 .order-form-active #cart-items,
-.order-form-active h2,
 .order-form-active button:not(#order-form button) {
   display: none;
 }
