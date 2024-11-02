@@ -1,52 +1,96 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - ABC Fitness Studios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-image {
+            position: relative;
+            width: 100%;
+            height: 50vh; /* Half the size of the body */
+            overflow: hidden;
+        }
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-image .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+        }
+        .header-image .site-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .social-icons img {
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-image">
+            <img src="Images/HeaderImg.jpg" alt="Header Image">
+            <h1 class="site-title">ABC Fitness Studios</h1>
+            <img src="Images/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="AboutUs.html" class="nav-button">About Us</a></li>
+                <li><a href="store.html" class="nav-button">Products/Classes</a></li>
+                <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCartView()">
+                <img src="Images/cart-icon.png" alt="Cart Icon">
+                <span class="cart-total">$0.00</span>
+            </div>
+        </nav>
+    </header>
 
-function addToCart(item) {
-    // Ensure item has valid price and qty
-    if (typeof item.price !== 'number' || typeof item.qty !== 'number') {
-        console.error('Invalid item properties');
-        return;
-    }
+    <main>
+        <section>
+            <h2>Our Products</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="Images/product1.jpg" alt="Product 1" class="product-image">
+                    <p>Product 1 - $20.00</p>
+                    <button onclick="addToCart({ name: 'Product 1', price: 20, qty: 1, image: 'Images/product1.jpg' })">Add to Cart</button>
+                </div>
+                <!-- Add similar blocks for other products -->
+            </div>
+        </section>
+    </main>
 
-    cart.push(item);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartTotal();
-}
+    <div id="cart-view">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="toggleCartView()">Close</button>
+    </div>
 
-function updateCartTotal() {
-    let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-    document.querySelector('.cart-total').innerText = `$${total.toFixed(2)}`;
-}
+    <footer>
+        <p>Contact us at: admin@abcfitnessstudios.com</p>
+        <div class="social-icons">
+            <a href="#"><img src="Images/facebooklogo.jpg" alt="Facebook" class="social-icon"></a>
+            <a href="#"><img src="Images/Instagramlogo.jpg" alt="Instagram" class="social-icon"></a>
+            <a href="#"><img src="Images/Twitterlogo.jpg" alt="Twitter" class="social-icon"></a>
+        </div>
+        <p>&copy; 2024 ABC Fitness Studios</p>
+    </footer>
 
-function clearCart() {
-    cart = [];
-    localStorage.removeItem('cart');
-    updateCartTotal();
-    renderCartItems();
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartTotal();
-    renderCartItems();
-}
-
-function toggleCartView() {
-    const cartView = document.getElementById('cart-view');
-    cartView.style.display = cartView.style.display === 'none' ? 'block' : 'none';
-    renderCartItems();
-}
-
-function renderCartItems() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-    cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width:50px;height:50px;"> ${item.name} - $${item.price} x ${item.qty} <button onclick="removeFromCart(${index})">Remove</button>`;
-        cartItemsContainer.appendChild(li);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartTotal();
-});
+    <script src="scripts.js"></script>
+</body>
+</html>
