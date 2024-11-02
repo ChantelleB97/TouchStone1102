@@ -86,3 +86,9 @@ footer {
 #cart-view {
   display: none; /* Ensure the cart is hidden initially */
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
