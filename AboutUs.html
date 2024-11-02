@@ -54,6 +54,10 @@
             grid-column: span 3;
             text-align: center;
         }
+        .form-vertical {
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
@@ -91,11 +95,19 @@
                 <p>Sunday: Closed</p>
             </div>
             <div class="grid-item">
-                <form action="#">
+                <form class="form-vertical" action="#">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <select id="name" name="name" required>
+                        <option value="mr">Mr.</option>
+                        <option value="ms">Ms.</option>
+                        <option value="dr">Dr.</option>
+                    </select>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <select id="email" name="email" required>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="yahoo.com">yahoo.com</option>
+                        <option value="outlook.com">outlook.com</option>
+                    </select>
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" required></textarea>
                     <button type="submit">Send</button>
