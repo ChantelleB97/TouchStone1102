@@ -1,6 +1,12 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item) {
+    // Ensure item has valid price and qty
+    if (typeof item.price !== 'number' || typeof item.qty !== 'number') {
+        console.error('Invalid item properties');
+        return;
+    }
+
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartTotal();
