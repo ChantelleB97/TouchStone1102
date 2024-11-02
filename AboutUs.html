@@ -58,6 +58,18 @@
             display: flex;
             flex-direction: column;
         }
+        #cart-view {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +86,8 @@
                 <li><a href="store.html" class="nav-button">Products/Classes</a></li>
                 <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
             </ul>
-            <div class="cart-icon" aria-live="polite">
+            <div class="cart-icon" aria-live="polite" onclick="toggleCartView()">
+                <img src="Images/cart-icon.png" alt="Cart Icon">
                 <span class="cart-total">$0.00</span>
             </div>
         </nav>
@@ -97,17 +110,9 @@
             <div class="grid-item">
                 <form class="form-vertical" action="#">
                     <label for="name">Name:</label>
-                    <select id="name" name="name" required>
-                        <option value="mr">Mr.</option>
-                        <option value="ms">Ms.</option>
-                        <option value="dr">Dr.</option>
-                    </select>
+                    <input type="text" id="name" name="name" required>
                     <label for="email">Email:</label>
-                    <select id="email" name="email" required>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="yahoo.com">yahoo.com</option>
-                        <option value="outlook.com">outlook.com</option>
-                    </select>
+                    <input type="text" id="email" name="email" required>
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" required></textarea>
                     <button type="submit">Send</button>
@@ -115,6 +120,13 @@
             </div>
         </div>
     </main>
+
+    <div id="cart-view">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="toggleCartView()">Close</button>
+    </div>
 
     <footer>
         <p>Contact us at: admin@abcfitnessstudios.com</p>
