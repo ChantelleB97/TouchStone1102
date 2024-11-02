@@ -10,6 +10,7 @@ function addToCart(item) {
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartTotal();
+    alert('Item added to the cart.');
 }
 
 function updateCartTotal() {
@@ -22,6 +23,7 @@ function clearCart() {
     localStorage.removeItem('cart');
     updateCartTotal();
     renderCartItems();
+    alert('Cart Cleared!');
 }
 
 function removeFromCart(index) {
