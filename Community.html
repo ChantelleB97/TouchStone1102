@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Involvement - ABC Fitness Studios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="header-image">
+            <img src="Images/HeaderImg.jpg" alt="Header Image">
+            <h1 class="site-title">ABC Fitness Studios</h1>
+            <img src="Images/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <nav role="navigation" aria-label="Main navigation" style="display: flex; align-items: center;">
+            <ul class="menu" style="margin-right: auto;">
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="AboutUs.html" class="nav-button">About Us</a></li>
+                <li><a href="store.html" class="nav-button">Products/Classes</a></li>
+                <li><a href="ContactUs.html" class="nav-button">Contact Us</a></li>
+            </ul>
+            <div class="cart-icon" aria-live="polite" onclick="toggleCartView()">
+                <img src="Images/shopping-cart.png" alt="Cart Icon" style="width: 30px; height: auto;">
+                <span class="cart-total">$0.00</span>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <h2 style="text-align: center;">Community Involvement</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p><strong>John Doe</strong></p>
+                <p>2024-11-01</p>
+                <p>ABC Fitness Studios has transformed my life. The instructors are amazing and the community is so supportive!</p>
+            </div>
+            <div class="grid-item">
+                <p><strong>Jane Smith</strong></p>
+                <p>2024-10-25</p>
+                <p>I love the variety of classes available. There's something for everyone, and the atmosphere is always welcoming.</p>
+            </div>
+            <div class="grid-item">
+                <p><strong>Mark Johnson</strong></p>
+                <p>2024-10-18</p>
+                <p>The facilities are top-notch and the staff is incredibly friendly. I highly recommend ABC Fitness Studios!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="subscribe-button" onclick="subscribe()">Subscribe</button>
+        <p>Contact us at: admin@abcfitnessstudios.com</p>
+        <div class="social-icons">
+            <a href="#"><img src="Images/facebooklogo.jpg" alt="Facebook" class="social-icon"></a>
+            <a href="#"><img src="Images/Instagramlogo.jpg" alt="Instagram" class="social-icon"></a>
+            <a href="#"><img src="Images/Twitterlogo.jpg" alt="Twitter" class="social-icon"></a>
+        </div>
+        <p>&copy; 2024 ABC Fitness Studios</p>
+    </footer>
+
+    <script>
+        function subscribe() {
+            alert('Thank you for subscribing.');
+        }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
