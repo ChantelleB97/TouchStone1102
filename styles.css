@@ -9,19 +9,22 @@ body {
 
 .header-image {
   position: relative;
-  text-align: center;
+  width: 100%;
+  height: 50vh; /* Half the size of the body */
+  overflow: hidden;
 }
 
 .header-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header-image .logo {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 100px;
+  width: 100px; /* Adjust size as needed */
   height: auto;
 }
 
@@ -30,10 +33,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: 40px;
-  font-weight: bold;
   color: white;
+  font-size: 2em;
   text-shadow: 2px 2px 4px #000;
 }
 
@@ -97,9 +98,9 @@ footer {
   display: none;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
-  position: absolute;
+  position: fixed;
   right: 20px;
-  top: 60px;
+  top: 20px;
   width: 300px;
   background: white;
   border: 1px solid #ccc;
@@ -168,6 +169,11 @@ button, .subscribe-button {
   font-weight: bold;
   background-color: #AE232D; /* Accent: Cardio Crimson */
   color: #ffffee; /* Background: Ivory Incline */
+}
+
+.social-icons img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
 }
 
 small, footer {
