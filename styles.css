@@ -1,5 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  color: #1E1B1C; /* Primary: Barbell Black */
+  background-color: #ffffee; /* Background: Ivory Incline */
   margin: 0;
   padding: 0;
 }
@@ -19,8 +22,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5em;
-  color: black;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #1E1B1C; /* Primary: Barbell Black */
 }
 
 nav {
@@ -42,9 +47,9 @@ nav {
 
 .nav-button {
   text-decoration: none;
-  color: black;
+  color: #1E1B1C; /* Primary: Barbell Black */
   padding: 8px 16px;
-  background-color: #f0f0f0;
+  background-color: #ffffee; /* Background: Ivory Incline */
   border-radius: 4px;
 }
 
@@ -76,7 +81,7 @@ nav {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #ffffee; /* Background: Ivory Incline */
 }
 
 .header-image .logo {
@@ -135,4 +140,34 @@ main {
 .order-form textarea,
 .order-form button {
   padding: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1E1B1C; /* Primary: Barbell Black */
+}
+
+h1 {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+button, .subscribe-button {
+  font-family: 'Impact', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #AE232D; /* Accent: Cardio Crimson */
+  color: #ffffee; /* Background: Ivory Incline */
+}
+
+small, footer {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 11px;
+  color: #519c4f; /* Secondary: Gains Green */
 }
