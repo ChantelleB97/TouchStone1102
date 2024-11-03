@@ -37,10 +37,29 @@
             width: 30px; /* Consistent size with index.html */
             height: auto;
         }
-        footer {
-            background-color: #f0f0f0; /* Matching background color from index.html */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
             text-align: center;
+        }
+        .community-section, .inquiries-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .two-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -84,6 +103,25 @@
                 <p>The facilities are top-notch and the staff is incredibly friendly. I highly recommend ABC Fitness Studios!</p>
             </div>
         </div>
+
+        <section class="community-section">
+            <h2>Community Involvement</h2>
+            <div class="two-boxes">
+                <div class="grid-item">
+                    <h3>School Fitness</h3>
+                    <p>We are committed to promoting fitness and wellness in schools. Our team visits local schools to conduct fitness workshops and activities, encouraging students to adopt healthy lifestyles from an early age.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Fitness in the Park</h3>
+                    <p>Join us for fitness sessions in the park! We organize regular outdoor fitness classes that are free and open to the community. It’s a great way to stay fit and enjoy the beautiful outdoors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="inquiries-section">
+            <h2>Inquiries</h2>
+            <p>If you would like to collaborate on a community project, please reach out to us at <a href="mailto:events@abcfitnessstudios.com">events@abcfitnessstudios.com</a>.</p>
+        </section>
     </main>
 
     <div id="cart-view">
