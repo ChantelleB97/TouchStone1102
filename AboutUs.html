@@ -123,7 +123,7 @@
             </div>
             <div class="grid-item">
                 <h2>Contact Form</h2>
-                <form class="form-vertical" action="#">
+                <form class="form-vertical" action="#" id="contact-form" onsubmit="saveFormData(event)">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                     <label for="email">Email:</label>
@@ -171,6 +171,43 @@
     <script>
         function subscribe() {
             alert('Thank you for subscribing.');
+        }
+
+        function saveFormData(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const formData = { name, email, message };
+
+            localStorage.setItem('contactFormData', JSON.stringify(formData));
+            alert('Form data saved!');
+        }
+
+        function toggleCartView() {
+            var cartView = document.getElementById('cart-view');
+            if (cartView.style.display === 'none' || cartView.style.display === '') {
+                cartView.style.display = 'block';
+            } else {
+                cartView.style.display = 'none';
+            }
+        }
+
+        function clearCart() {
+            // Clear cart functionality
+        }
+
+        function showOrderForm() {
+            document.getElementById('order-form-view').style.display = 'block';
+        }
+
+        function hideOrderForm() {
+            document.getElementById('order-form-view').style.display = 'none';
+        }
+
+        function processOrder(event) {
+            event.preventDefault();
+            // Process order functionality
         }
     </script>
     <script src="scripts.js"></script>
